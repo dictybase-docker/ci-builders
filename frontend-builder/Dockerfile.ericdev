@@ -1,10 +1,10 @@
-FROM dictybase/node-runner:dev
+FROM dictybase/frontend-builder:dev
 LABEL maintainer "Eric Hartline <eric.hartline@northwestern.edu>"
 
 # URL for api server
 ARG api_server
-ENV REACT_APP_API_SERVER ${api_server:-https://betaapi.dictybase.local}
+ENV REACT_APP_API_SERVER ${api_server:-https://ericapi.dictybase.dev}
 
 # URL for auth server
 ARG auth_server
-ENV REACT_APP_AUTH_SERVER ${auth_server:-https://betatoken.dictybase.local}
+ENV REACT_APP_AUTH_SERVER ${auth_server:-https://erictoken.dictybase.dev}

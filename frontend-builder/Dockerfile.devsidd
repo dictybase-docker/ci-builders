@@ -3,8 +3,8 @@ LABEL maintainer "Siddhartha Basu <siddhartha-basu@northwestern.edu>"
 
 # URL for api server
 ARG api_server
-ENV REACT_APP_API_SERVER ${api_server:-https://betaapi.dictybase.local}
+ENV REACT_APP_API_SERVER ${api_server:-https://siddapi.dictybase.dev}
 
 # URL for auth server
 ARG auth_server
-ENV REACT_APP_AUTH_SERVER ${auth_server:-https://betatoken.dictybase.local}
+ENV REACT_APP_AUTH_SERVER ${auth_server:-https://siddtoken.dictybase.dev}

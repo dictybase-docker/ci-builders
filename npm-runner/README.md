@@ -2,6 +2,6 @@
 
 #### Usage
 ```shell
-docker build --rm -t dictybase/node-runner
+docker build --rm -t dictybase/node-runner .
 docker push dictybase/node-runner
 ```
