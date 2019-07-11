@@ -1,4 +1,4 @@
-default: runner frontend backend
+default: runner frontend backend minio
 
 runner:
 	cd npm-runner && \
@@ -21,5 +21,10 @@ frontend:
 		docker push dictybase/frontend-builder:devsidd && \
 		docker push dictybase/frontend-builder:staging
 
+minio:
+	cd minio-client && \
+		docker build --rm -t dictybase/minio-client . && \
+		docker push dictybase/minio-client
+	
 
 
