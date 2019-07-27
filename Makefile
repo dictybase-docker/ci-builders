@@ -1,4 +1,4 @@
-default: runner frontend backend minio
+default: runner frontend backend minio imgtag
 
 runner:
 	cd npm-runner && \
@@ -26,5 +26,8 @@ minio:
 		docker build --rm -t dictybase/minio-client . && \
 		docker push dictybase/minio-client
 	
-
+imgtag:
+	cd image-tag-generator && \
+		docker build --rm -t dictybase/image-tag-generator . && \
+		docker push dictybase/image-tag-generator
 
