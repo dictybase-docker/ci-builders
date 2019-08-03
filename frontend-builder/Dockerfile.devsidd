@@ -8,3 +8,7 @@ ENV REACT_APP_API_SERVER ${api_server:-https://siddapi.dictybase.dev}
 # URL for auth server
 ARG auth_server
 ENV REACT_APP_AUTH_SERVER ${auth_server:-https://siddtoken.dictybase.dev}
+
+# Setup client keys for third party auth
+ARG client_keys
+ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.1/clientConfig.sidd.js}

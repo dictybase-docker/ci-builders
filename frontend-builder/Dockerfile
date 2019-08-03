@@ -13,8 +13,4 @@ ENV REACT_APP_FOOTER_JSON ${footer_json:-https://raw.githubusercontent.com/dicty
 ARG download_tabs_json
 ENV REACT_APP_DOWNLOAD_TABS_JSON ${download_tabs_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/downloads/organisms.dev.json}
 
-# Setup client keys for third party auth
-ARG client_keys
-ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js}
-
 ENV NODE_PATH src
