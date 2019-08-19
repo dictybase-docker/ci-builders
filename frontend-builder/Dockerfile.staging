@@ -9,6 +9,14 @@ ENV REACT_APP_API_SERVER ${api_server:-https://betaapi.dictybase.org}
 ARG auth_server
 ENV REACT_APP_AUTH_SERVER ${auth_server:-https://betatoken.dictybase.org}
 
+# URL for graphql server
+ARG graphql_server
+ENV REACT_APP_GRAPHQL_SERVER ${graphql_server:-https://betagraphql.dictybase.org}
+
 # URL for kubeless functions
 ARG func_server
 ENV REACT_APP_FUNC_SERVER ${func_server:-https://betafunc.dictybase.org}
+
+# Setup client keys for third party auth
+ARG client_keys
+ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/1.0.0/clientConfig.js}
