@@ -8,3 +8,7 @@ ENV REACT_APP_API_SERVER ${api_server:-https://betaapi.dictybase.org}
 # URL for auth server
 ARG auth_server
 ENV REACT_APP_AUTH_SERVER ${auth_server:-https://betatoken.dictybase.org}
+
+# URL for kubeless functions
+ARG func_server
+ENV REACT_APP_FUNC_SERVER ${func_server:-https://betafunc.dictybase.org}
