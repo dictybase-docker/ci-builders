@@ -1,6 +1,10 @@
 FROM dictybase/frontend-builder:dev
 LABEL maintainer "Siddhartha Basu <siddhartha-basu@northwestern.edu>"
 
+# Google Analytics tracking ID
+ARG ga_tracking_id
+ENV REACT_APP_GA_TRACKING_ID ${ga_tracking_id:-UA-16352781-8}
+
 # URL for api server
 ARG api_server
 ENV REACT_APP_API_SERVER ${api_server:-https://betaapi.dictybase.org}
