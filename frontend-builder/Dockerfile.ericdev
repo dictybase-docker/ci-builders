@@ -21,9 +21,9 @@ ENV REACT_APP_FUNC_SERVER ${func_server:-https://ericfunc.dictybase.dev}
 ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/2.0.0/clientConfig.eric.js}
 
-# URL for graphql server
-ARG graphql_server
-ENV REACT_APP_GRAPHQL_SERVER ${graphql_server:-https://ericgraphql.dictybase.dev}
+# URL for download tabs json
+ARG download_tabs_json
+ENV REACT_APP_DOWNLOAD_TABS_JSON ${download_tabs_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/downloads/organisms-with-citations.dev.json}
 
 # Google Analytics tracking ID
 ARG ga_tracking_id

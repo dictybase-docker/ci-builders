@@ -21,6 +21,10 @@ ENV REACT_APP_GRAPHQL_SERVER ${graphql_server:-https://betagraphql.dictybase.org
 ARG func_server
 ENV REACT_APP_FUNC_SERVER ${func_server:-https://betafunc.dictybase.org}
 
+# URL for download tabs json
+ARG download_tabs_json
+ENV REACT_APP_DOWNLOAD_TABS_JSON ${download_tabs_json:-https://raw.githubusercontent.com/dictyBase/migration-data/master/downloads/organisms-with-citations.staging.json}
+
 # Setup client keys for third party auth
 ARG client_keys
 ENV CLIENT_KEYS ${client_keys:-https://raw.githubusercontent.com/dictybase-playground/client-keys/1.0.0/clientConfig.js}
