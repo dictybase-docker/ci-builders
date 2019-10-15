@@ -1,0 +1,45 @@
+name: BuildImage
+on: 
+ push:
+   branches:
+     - master
+jobs:
+  dockerhub-build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: check out code
+        uses: actions/checkout@v1
+      - name: build golang:1.12.10-alpine-edge image
+        run: | 
+          cd golang-alpine-edge/1.12.10
+          docker build -t dictybase/golang:1.12.10-alpine-edge .
+      - name: build golang:1.11.13-alpine-edge image
+        run: | 
+          cd golang-alpine-edge/1.11.13
+          docker build -t dictybase/golang:1.11.13-alpine-edge .
+      - name: login to docker hub
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: push to docker hub
+        run: |
+          docker push dictybase/golang:1.11.13-alpine-edge
+          docker push dictybase/golang:1.12.10-alpine-edge
+  github-build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: check out code
+        uses: actions/checkout@v1
+      - name: build golang:1.12.10-alpine-edge image
+        run: | 
+          cd golang-alpine-edge/1.12.10
+          docker build -t docker.pkg.github.com/dictybase-docker/ci-builders/golang:1.12.10-alpine-edge .
+      - name: build golang:1.11.13-alpine-edge image
+        run: | 
+          cd golang-alpine-edge/1.11.13
+          docker build -t docker.pkg.github.com/dictybase-docker/ci-builders/golang:1.11.13-alpine-edge .
+      - name: login to github package registry
+        run: docker login docker.pkg.github.com -u dictybase -p ${{ secrets.GITHUB_REGISTRY_TOKEN }}
+      - name: push to github package registry
+        run: |
+          docker push docker.pkg.github.com/dictybase-docker/ci-builders/golang:1.11.13-alpine-edge
+          docker push docker.pkg.github.com/dictybase-docker/ci-builders/golang:1.12.10-alpine-edge
+
