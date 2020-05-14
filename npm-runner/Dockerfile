@@ -1,4 +1,4 @@
-FROM node:10.20.1-alpine
+FROM node:12.16.3-alpine
 LABEL maintainer="Siddhartha Basu <siddhartha-basu@northwestern.edu>"
 RUN apk update && \ 
     apk upgrade && \
